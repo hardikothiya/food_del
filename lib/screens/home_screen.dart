@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   _buildRestaurants() {
     List<Widget> restaurantList = [];
-    restaurants.forEach((Restaurant restaurant) {
+    for (var restaurant in restaurants) {
       restaurantList.add(
         Container(
           margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -33,49 +33,51 @@ class _HomePageState extends State<HomePage> {
                   image: AssetImage(restaurant.imageUrl),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      restaurant.name,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        restaurant.name,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    // starrrr
-                    const SizedBox(height: 4),
+                      // starrrr
+                      const SizedBox(height: 4),
 
-                    Text(
-                      restaurant.address,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        restaurant.address,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
+                      const SizedBox(height: 4),
 
-                    Text(
-                      '3Km away',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      const Text(
+                        '3Km away',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],
           ),
         ),
       );
-    });
+    }
     return Column(children: restaurantList);
   }
 
