@@ -34,6 +34,7 @@ class _CartScreenState extends State<CartScreen> {
                       order.food.name,
                       style: TextStyle(
                           fontSize: 20.0, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -50,6 +51,7 @@ class _CartScreenState extends State<CartScreen> {
                         border: Border.all(width: 0.8, color: Colors.black54),
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           GestureDetector(
                             onTap: () {},
@@ -61,7 +63,7 @@ class _CartScreenState extends State<CartScreen> {
                                   fontWeight: FontWeight.w700),
                             ),
                           ),
-                          SizedBox(width: 20),
+                          SizedBox(width: 15),
                           Text(
                             order.quantity.toString(),
                             style: TextStyle(
@@ -69,7 +71,7 @@ class _CartScreenState extends State<CartScreen> {
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700),
                           ),
-                          SizedBox(width: 20),
+                          SizedBox(width: 15),
                           GestureDetector(
                             onTap: () {},
                             child: Text(
@@ -134,13 +136,18 @@ class _CartScreenState extends State<CartScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Estimated deliver time :',
+                  Text('Amount to be paid :',
                       style: TextStyle(
                           fontSize: 20.0, fontWeight: FontWeight.bold)),
-                  Text(' 25 Min',
+                  Text(' \$${totalPrice.toStringAsFixed(2)}',
                       style: TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.bold))
+                          color: Colors.green,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold))
                 ],
+              ),
+              SizedBox(
+                height: 80,
               )
             ],
           );
@@ -148,9 +155,31 @@ class _CartScreenState extends State<CartScreen> {
         separatorBuilder: (BuildContext context, int index) {
           return Divider(
             height: 1,
-            color: Colors.blue,
+            color: Colors.grey,
           );
         },
+      ),
+      bottomSheet: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 80.0,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(0, -1), color: Colors.black26, blurRadius: 0.6),
+          ],
+        ),
+        child: TextButton(
+          onPressed: null,
+          child: Text(
+            'CHECKOUT',
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+                color: Colors.white),
+          ),
+        ),
       ),
     );
   }
