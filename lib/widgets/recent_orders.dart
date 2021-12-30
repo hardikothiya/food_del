@@ -70,20 +70,6 @@ class RecentOrders extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(right: 20.0),
-            width: 48.0,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(30.0),
-            ),
-            child: IconButton(
-              icon: Icon(Icons.add),
-              iconSize: 30.0,
-              color: Colors.white,
-              onPressed: () {},
-            ),
-          ),
         ],
       ),
     );

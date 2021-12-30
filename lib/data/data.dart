@@ -24,35 +24,35 @@ final _salmon = Food(
 // Restaurants
 final _restaurant0 = Restaurant(
   imageUrl: 'assets/images/restaurant0.jpg',
-  name: 'Restaurant 0',
+  name: 'Yellow peace',
   address: '200 Main St, New York, NY',
   rating: 5,
   menu: [_burrito, _steak, _pasta, _ramen, _pancakes, _burger, _pizza, _salmon],
 );
 final _restaurant1 = Restaurant(
   imageUrl: 'assets/images/restaurant1.jpg',
-  name: 'Restaurant 1',
+  name: 'Gangaur',
   address: '200 Main St, New York, NY',
   rating: 4,
   menu: [_steak, _pasta, _ramen, _pancakes, _burger, _pizza],
 );
 final _restaurant2 = Restaurant(
   imageUrl: 'assets/images/restaurant2.jpg',
-  name: 'Restaurant 2',
+  name: 'Dairy Don',
   address: '200 Main St, New York, NY',
   rating: 4,
   menu: [_steak, _pasta, _pancakes, _burger, _pizza, _salmon],
 );
 final _restaurant3 = Restaurant(
   imageUrl: 'assets/images/restaurant3.jpg',
-  name: 'Restaurant 3',
+  name: 'Domono\'s',
   address: '200 Main St, New York, NY',
   rating: 2,
   menu: [_burrito, _steak, _burger, _pizza, _salmon],
 );
 final _restaurant4 = Restaurant(
   imageUrl: 'assets/images/restaurant4.jpg',
-  name: 'Restaurant 4',
+  name: 'MacDonalds',
   address: '200 Main St, New York, NY',
   rating: 3,
   menu: [_burrito, _ramen, _pancakes, _salmon],
